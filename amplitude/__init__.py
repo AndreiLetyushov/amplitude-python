@@ -31,7 +31,7 @@ class AmplitudeLogger:
         event_type = kwargs.get('event_type', None)
 
         if user_id is None or device_id is None or event_type is None:
-            return None
+            raise ValueError('user_id, device_id, event_type should be non empty sting')
 
         event["device_id"] = device_id if device_id is str else str(device_id)
         event["user_id"] = user_id if user_id is str else str(user_id)
