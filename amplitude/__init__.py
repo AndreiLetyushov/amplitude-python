@@ -36,7 +36,7 @@ class AmplitudeLogger:
         event["device_id"] = device_id if device_id is str else str(device_id)
         event["user_id"] = user_id if user_id is str else str(user_id)
         event["event_type"] = event_type if event_type is str else str(event_type)
-        event["time"] = long(time.time() * 1000)
+        event["time"] = int(time.time() * 1000)
 
         user_properties = kwargs.get('user_properties', None)
         if user_properties is not None and type(user_properties) == dict:
